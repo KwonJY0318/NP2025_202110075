@@ -1,0 +1,27 @@
+from socket import *
+
+port = 2500
+BUFSIZE = 1024
+
+sock = socket(AF_INET, SOCK_STREAM)
+sock.bind(('192.168.214.161', port))
+sock.listen(1)
+
+conn, (remotehost, remoteport) = sock.accept()
+print('connected by', remotehost, remoteport)
+
+while True:
+    try:
+        data = conn.recv(BUFSIZE)
+    except:
+        conn.close()
+        break
+    else:
+        print(data.decode())
+        try:
+            conn.send(data)
+        except:
+            conn.close()
+            break
+
+conn.close()
