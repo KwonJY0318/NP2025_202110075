@@ -5,7 +5,7 @@ table = {'1':'one', '2':'two', '3':'three', '4':'four',
          '9':'nine', '10':'ten'}
 
 s = socket.socket() #기본으로 AF_INET, SOCK_STREAM 사용
-address = ("192.168.214.161", 2500)
+address = ("192.168.219.163", 2500)
 s.bind(address)
 s.listen(1)
 print('Waiting...')
