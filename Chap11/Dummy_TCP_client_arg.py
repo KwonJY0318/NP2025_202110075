@@ -5,7 +5,7 @@ BUFSIZE = 1024
 
 # 1) 명령 인자 설정
 parser = argparse.ArgumentParser(description="TCP Dummy Client with -s, -p options")
-parser.add_argument('-s', default="127.0.0.1", help="Server IP address")   # 서버 IP
+parser.add_argument('-s', default="192.168.214.161", help="Server IP address")   # 서버 IP
 parser.add_argument('-p', type=int, default=2500, help="Port number")      # 포트 번호
 args = parser.parse_args()
 
